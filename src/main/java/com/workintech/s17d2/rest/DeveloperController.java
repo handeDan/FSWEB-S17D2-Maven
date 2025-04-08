@@ -6,6 +6,7 @@ import com.workintech.s17d2.model.Developer;
 import com.workintech.s17d2.model.JuniorDeveloper;
 import com.workintech.s17d2.model.MidDeveloper;
 import com.workintech.s17d2.model.SeniorDeveloper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,6 +28,7 @@ public class DeveloperController {
         developers.put(3, new SeniorDeveloper(3, "Hakan", 90000.0));
     }
 
+    @Autowired
     public DeveloperController(Taxable taxable) {
         this.taxable = taxable;
         this.developers = new HashMap<>();
